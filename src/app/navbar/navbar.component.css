@@ -1,0 +1,40 @@
+div {
+  font-size: 3.5rem;
+  color: white;
+  background-color: rgba(236, 240, 241, 0.2)
+}
+
+li {
+  margin-top: 2rem;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.brand {
+  margin: 2rem;
+}
+
+div nav a:hover {
+  cursor: pointer;
+  color: rgba(133, 193, 233, 0.5);
+}
+
+@media screen and (max-width: 647px) {
+
+  header {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr)
+  }
+
+  ul {
+    all: unset;
+    list-style: none;
+  }
+  li {
+    margin-left: 2rem;
+  }
+}

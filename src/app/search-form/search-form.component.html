@@ -1,0 +1,24 @@
+<div class="body1">
+  <div class="form">
+    <h1>Search!</h1>
+    <form #usernameForm='ngForm' (ngSubmit)="getUsername(usernameForm.value)">
+      <div>
+        <input required ngModel name="username" #username="ngModel" type="text" id="githubUsername" class="inputs" autocomplete="off"/>
+        <label class="lbl" for="githubUsername">Username:</label>
+        <button type="submit" id="userButton" class="btn btn-outline-primary">Search</button>
+      </div>
+    </form>
+    <br>
+  </div>
+</div>
+<div class="body2">
+  <div *ngIf='githubService.user.name ! ""'>
+    <div class="usernameDiv" [innerHTML] = 'githubService.user.login | highlight: githubService.user.login'></div>
+    <img src="{{githubService.user.avatar_url}}" alt="GitHub profile picture" height="170" width="170" />
+    <p>Public repos: {{githubService.user.public_repos}}</p>
+    <br>
+    <br>
+    <h3 (click)='onSelect(githubService.user)' appColor>Click to view {{githubService.user.login}}'s Repositories</h3>
+  </div>
+
+</div>
